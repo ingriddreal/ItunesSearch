@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="10dp">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/albumWorkart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerVertical="true" >
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        app:srcCompat="@android:drawable/star_big_off"
+        tools:src="@android:drawable/star_big_off"
+    />
 
-        <ImageView
-            android:id="@+id/albumWorkart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/star_big_off"
-            tools:src="@android:drawable/star_big_off"
-             />
-
-        <TextView
-            android:id="@+id/albumName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            tools:text="Great group"/>
-        <TextView
-            android:id="@+id/releaseDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="10 September 2001"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/btnDelete"
+    <TextView
+        android:id="@+id/albumName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:text="delete" />
-</RelativeLayout>
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintLeft_toRightOf="@id/albumWorkart"
+        android:textSize="20sp"
+        tools:text="Great group" />
+
+    <TextView
+        android:id="@+id/releaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentTop="true"
+        app:layout_constraintTop_toBottomOf="@id/albumName"
+        app:layout_constraintLeft_toRightOf="@id/albumWorkart"
+        tools:text="10 September 2001"/>
+</android.support.constraint.ConstraintLayout>

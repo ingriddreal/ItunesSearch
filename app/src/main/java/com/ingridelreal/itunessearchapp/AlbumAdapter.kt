@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.ingridelreal.itunessearchapp.model.Album
@@ -64,17 +65,13 @@ class AlbumAdapter (private val albums : List<Album>, listener: OnItemClickListe
         val albumName: TextView
         val releaseDate: TextView
         val albumWorkart : ImageView
+
         init {
             albumName = itemView.findViewById(R.id.albumName)
             releaseDate = itemView.findViewById(R.id.releaseDate)
 
             albumWorkart = itemView.findViewById(R.id.albumWorkart)
 
-            val btnDelete = itemView.findViewById<Button>(R.id.btnDelete)
-            btnDelete.setOnClickListener(View.OnClickListener {
-                val pos = adapterPosition
-//                val todo = albums?.get(pos)
-            })
         }
 
         fun bind(album: Album, listener: OnItemClickListener) {
